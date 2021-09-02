@@ -11,10 +11,10 @@ Channel
 process align {
     tag "${indiv_id}:LN${ln_number}:run${run}"
 
-    inputs:
+    input:
     val(indiv_id), val(ln_number), val(run), file(r1_fastq), file(r2_fastq) from FASTQ_TO_ALIGN
 
-    outputs:
+    output:
     val(indiv_id), val(ln_number), val(run), file('*.Aligned.sortedByCoord.out.bam') into ALIGNED_BAMFILES
 
     script:
